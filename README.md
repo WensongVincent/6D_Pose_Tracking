@@ -36,9 +36,9 @@ Choose the most suitable driver, in this case, 470 (nvidia-driver-xxx, for deskt
 sudo apt install nvidia-driver-470
 ```
 
-Check GPU in use: 
+Check GPU in use by checking the string in square bracket: 
 ```sh
-lspci -Dnn | grep ‘NVIDIA’, get string in []
+lspci -Dnn | grep ‘NVIDIA’
 ```
 
 Check kernel in use: 
