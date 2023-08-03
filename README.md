@@ -26,27 +26,27 @@ if it is in nouveau status not nvidia, then download
 sudo apt-get update
 ```
 
-Check available drivers: 
+- Check available drivers: 
 ```sh
 apt-cache search nvidia-driver-
 ```
 
-Choose the most suitable driver, in this case, 470 (nvidia-driver-xxx, for desktop user; nvidia-driver-xxx-server, for server user; nvidia-driver-xxx-open, for open source user): 
+- Choose the most suitable driver, in this case, 470 (nvidia-driver-xxx, for desktop user; nvidia-driver-xxx-server, for server user; nvidia-driver-xxx-open, for open source user): 
 ```sh
 sudo apt install nvidia-driver-470
 ```
 
-Check GPU in use by checking the string in square bracket: 
+- Check GPU in use by checking the string in square bracket: 
 ```sh
 lspci -Dnn | grep ‘NVIDIA’
 ```
 
-Check kernel in use: 
+- Check kernel in use: 
 ```sh
 lspci -nnk -d <string_above>
 ```
 
-Restart Ubuntu
+- Restart Ubuntu
 ```sh
 sudo reboot
 ```
@@ -56,17 +56,17 @@ sudo reboot
 cd <file_want_to_download>
 ```
 
-Get .sh file from website:
+- Get .sh file from website:
 ```sh
 wget <website_of_anaconda_file> 
 ```
 
-Install:
+- Install:
 ```sh
 bash <file_name_of_anaconda_download>
 ```
 
-Init:
+- Init:
 ```sh
 conda init
 ```
