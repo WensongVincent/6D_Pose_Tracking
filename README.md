@@ -18,18 +18,24 @@ PyTorch with CUDA support are required. Our code is tested on python 3.8, torch 
 nvidia-smi
 ```
 if it is in nouveau status not nvidia, then download
+
 2. Download Nvidia Driver: 
-- Update root path: 
+
+Update root path: 
 ```sh
 sudo apt-get update
 ```
-    - Check available drivers: 
-    $ apt-cache search nvidia-driver-
-    - Choose the most suitable driver, in this case, 470: 
-    $ sudo apt install nvidia-driver-470
-       nvidia-driver-xxx, for desktop user,
-       nvidia-driver-xxx-server, for server user,
-       nvidia-driver-xxx-open, for open source user
+
+Check available drivers: 
+```sh
+apt-cache search nvidia-driver-
+```
+
+Choose the most suitable driver, in this case, 470 (nvidia-driver-xxx, for desktop user; nvidia-driver-xxx-server, for server user; nvidia-driver-xxx-open, for open source user): 
+```sh
+sudo apt install nvidia-driver-470
+```
+
     - Check GPU in use: 
     $ lspci -Dnn | grep ‘NVIDIA’, get string in []
     - Check kernel in use: 
