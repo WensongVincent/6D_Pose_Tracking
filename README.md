@@ -22,7 +22,7 @@
    sudo apt-get update
    ```
    
-   Check available drivers:
+2. Check available drivers:
    ```sh
    apt-cache search nvidia-driver-
    ```
@@ -48,6 +48,24 @@
    ```
    
 3. Download Nvidia Driver:
+   ```sh
+   cd <file_want_to_download>
+   ```
+
+   Get .sh file from website:
+   ```sh
+   wget <website_of_anaconda_file>
+   ```
+
+   Install:
+   ```sh
+   bash <file_name_of_anaconda_download>
+   ```
+
+   Init:
+   ```sh
+   conda init
+   ```
    
 4. Download anaconda (use $ conda -V check whether have one):
    
@@ -67,24 +85,7 @@
 
 
 3. 
-```sh
-cd <file_want_to_download>
-```
 
-- Get .sh file from website:
-```sh
-wget <website_of_anaconda_file> 
-```
-
-- Install:
-```sh
-bash <file_name_of_anaconda_download>
-```
-
-- Init:
-```sh
-conda init
-```
 
 4. 
     - Find correct version in website: 
