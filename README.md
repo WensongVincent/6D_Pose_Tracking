@@ -21,14 +21,32 @@
    ```sh
    sudo apt-get update
    ```
+   
    Check available drivers:
    ```sh
    apt-cache search nvidia-driver-
    ```
+   
    Choose the most suitable driver, in this case, 470 (nvidia-driver-xxx, for desktop user; nvidia-driver-xxx-server, for server user; nvidia-driver-xxx-open, for open source user):
    ```sh
    sudo apt install nvidia-driver-470
    ```
+
+   Check GPU in use by checking the string in square bracket:
+   ```sh
+   lspci -Dnn | grep ‘NVIDIA’
+   ```
+
+   Check kernel in use:
+   ```sh
+   lspci -nnk -d <string_above>
+   ```
+
+   Restart Ubuntu
+   ```sh
+   sudo reboot
+   ```
+   
 3. Download Nvidia Driver:
    
 4. Download anaconda (use $ conda -V check whether have one):
@@ -44,20 +62,9 @@
 
 
 
-- Check GPU in use by checking the string in square bracket: 
-```sh
-lspci -Dnn | grep ‘NVIDIA’
-```
 
-- Check kernel in use: 
-```sh
-lspci -nnk -d <string_above>
-```
 
-- Restart Ubuntu
-```sh
-sudo reboot
-```
+
 
 3. 
 ```sh
