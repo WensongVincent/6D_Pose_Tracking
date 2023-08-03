@@ -2,18 +2,11 @@
 
 ![method.jpg](assets/method.jpg)
 
-This repository is the official implementation for the paper:
-
-> Self-Supervised Geometric Correspondence for Category-Level 6D Object Pose Estimation in the Wild  
-> [Kaifeng Zhang](https://kywind.github.io/), [Yang Fu](https://oasisyang.github.io/), [Shubhankar Borse](https://scholar.google.com/citations?user=ZsgWCyMAAAAJ&hl=en), [Hong Cai](https://scholar.google.com/citations?user=9y3Kd3cAAAAJ&hl=en), [Fatih Porikli](https://scholar.google.com/citations?user=VpB8NZ8AAAAJ&hl=en]), [Xiaolong Wang](https://xiaolonw.github.io)  
-> ICLR, 2023  
-> [Project Page](https://kywind.github.io/self-pose) / [ArXiv](https://arxiv.org/abs/2210.07199)  
-
 ## Progress
 
-- [x] Training code
-- [x] Evaluation code
-- [x] Pretrained models
+- [ ] Training code
+- [ ] Evaluation code
+- [ ] Pretrained models
 - [ ] More datasets
 
 ## Environment Setup
