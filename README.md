@@ -11,15 +11,14 @@
 
 ## Environment Setup
 
-PyTorch with CUDA support are required. Our code is tested on python 3.8, torch 1.10.0, CUDA 11.1, and RTX 3090.
-
 1. Check Nvidia Driver:
-```sh
-nvidia-smi
-```
-if it is in nouveau status not nvidia, then download
+   ```sh
+    nvidia-smi
+    ```
+    if it is in nouveau status not nvidia, then download
 
-2. Download Nvidia Driver: 
+
+3. Download Nvidia Driver: 
 
 - Update root path: 
 ```sh
@@ -93,6 +92,8 @@ conda init
        https://blog.csdn.net/chen20170325/article/details/130294270
 
 6. Setup Pytorch and others
+PyTorch with CUDA support are required. Our code is tested on python 3.8, torch 1.10.0, CUDA 11.1, and RTX 3090.
+
 We recommend installing the required packages in the following order to avoid potential version conflicts:
 ```sh
 pip install torch==1.10.0+cu111 torchvision==0.11.0+cu111 torchaudio==0.10.0 -f https://download.pytorch.org/whl/torch_stable.html
