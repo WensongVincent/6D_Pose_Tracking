@@ -51,6 +51,48 @@ Restart Ubuntu
 sudo reboot
 ```
 
+3. Download anaconda (use $ conda -V check whether have one)
+```sh
+cd <file_want_to_download>
+```
+
+Get .sh file from website:
+```sh
+wget <website_of_anaconda_file> 
+```
+
+Install:
+```sh
+bash <file_name_of_anaconda_download>
+```
+
+Init:
+```sh
+conda init
+```
+
+4. Download CUDA
+    - Find correct version in website: 
+       https://developer.nvidia.com/cuda-toolkit-archive, this case: CUDA 11.1.0
+    - Use runfile(local) method
+    - Download .run file
+    $ wget https://developer.download.nvidia.com/compute/cuda/11.1.0/local_installers/cuda_11.1.0_455.23.05_linux.run
+    - Install CUDA
+    $ sudo sh cuda_11.1.0_455.23.05_linux.run 
+      Don’t choose [ ]Driver, since already got one
+5. Set environment variable
+    - Open ~/.bashrc file:
+    $ sudo nano ~/.bashrc
+    - Copy these to the end of file:
+    export CUDA_HOME=/usr/local/cuda
+    export PATH=$PATH:$CUDA_HOME/bin
+    export LD_LIBRARY_PATH=/usr/local/cuda11.6/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+    - Save:
+    $ source ~/.bashrc
+    - These steps not sure: 
+       https://blog.csdn.net/chen20170325/article/details/130294270
+
+6. Setup Pytorch and others
 We recommend installing the required packages in the following order to avoid potential version conflicts:
 ```sh
 pip install torch==1.10.0+cu111 torchvision==0.11.0+cu111 torchaudio==0.10.0 -f https://download.pytorch.org/whl/torch_stable.html
@@ -95,20 +137,5 @@ We provide the pretrained models on Wild6D dataset containing all 5 categories.
 
 To use, download the checkpoints in this [link](https://drive.google.com/drive/folders/1m9JwibSun0GTHRcfHoVLBLmPc3DWqy0Q?usp=share_link). Indicate the checkpoint path with the ```--model_path``` argument in ```scripts/predict.sh```. 
 
-## Citation
-
-```bibtex
-@article{zhang2022self,
-  title={Self-Supervised Geometric Correspondence for Category-Level 6D Object Pose Estimation in the Wild},
-  author={Zhang, Kaifeng and Fu, Yang and Borse, Shubhankar and Cai, Hong and Porikli, Fatih and Wang, Xiaolong},
-  journal={arXiv preprint arXiv:2210.07199},
-  year={2022}
-}
-```
-
-## Acknowledgement
-
-The skeleton of our code is borrowed from [ViSER](https://github.com/gengshan-y/viser-release/). Thank you for the great work.
-Also thanks to the following external repos: [SoftRas](https://github.com/ShichenLiu/SoftRas), [Zero-Shot-Pose](https://github.com/applied-ai-lab/zero-shot-pose/), [U-CMR](https://github.com/shubham-goel/ucmr), [PerceptualSimilarity](https://github.com/richzhang/PerceptualSimilarity), [Objectron](https://github.com/google-research-datasets/Objectron).
 
 
