@@ -13,6 +13,30 @@
 
 PyTorch with CUDA support are required. Our code is tested on python 3.8, torch 1.10.0, CUDA 11.1, and RTX 3090.
 
+1. Check Nvidia Driver:
+```sh
+nvidia-smi
+```
+if it is in nouveau status not nvidia, then download
+2. Download Nvidia Driver: 
+- Update root path: 
+```sh
+sudo apt-get update
+```
+    - Check available drivers: 
+    $ apt-cache search nvidia-driver-
+    - Choose the most suitable driver, in this case, 470: 
+    $ sudo apt install nvidia-driver-470
+       nvidia-driver-xxx, for desktop user,
+       nvidia-driver-xxx-server, for server user,
+       nvidia-driver-xxx-open, for open source user
+    - Check GPU in use: 
+    $ lspci -Dnn | grep ‘NVIDIA’, get string in []
+    - Check kernel in use: 
+    $ lspci -nnk -d <string_above>
+    - Restart Ubuntu
+    $ sudo reboot
+
 We recommend installing the required packages in the following order to avoid potential version conflicts:
 ```sh
 pip install torch==1.10.0+cu111 torchvision==0.11.0+cu111 torchaudio==0.10.0 -f https://download.pytorch.org/whl/torch_stable.html
