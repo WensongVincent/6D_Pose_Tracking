@@ -21,7 +21,7 @@ if it is in nouveau status not nvidia, then download
 
 2. Download Nvidia Driver: 
 
-Update root path: 
+- Update root path: 
 ```sh
 sudo apt-get update
 ```
