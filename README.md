@@ -13,27 +13,36 @@
 
 1. Check Nvidia Driver:
    ```sh
-    nvidia-smi
-    ```
-    if it is in nouveau status not nvidia, then download
+   nvidia-smi
+   ```
+   If it is in nouveau status not nvidia, then download
+
+   Update root path:
+   ```sh
+   sudo apt-get update
+   ```
+   Check available drivers:
+   ```sh
+   apt-cache search nvidia-driver-
+   ```
+   Choose the most suitable driver, in this case, 470 (nvidia-driver-xxx, for desktop user; nvidia-driver-xxx-server, for server user; nvidia-driver-xxx-open, for open source user):
+   ```sh
+   sudo apt install nvidia-driver-470
+   ```
+3. Download Nvidia Driver:
+   
+4. Download anaconda (use $ conda -V check whether have one):
+   
+5. Download CUDA:
+   
+6. Set environment variable:
+   
+7. Setup Pytorch and others:
 
 
-3. Download Nvidia Driver: 
 
-- Update root path: 
-```sh
-sudo apt-get update
-```
 
-- Check available drivers: 
-```sh
-apt-cache search nvidia-driver-
-```
 
-- Choose the most suitable driver, in this case, 470 (nvidia-driver-xxx, for desktop user; nvidia-driver-xxx-server, for server user; nvidia-driver-xxx-open, for open source user): 
-```sh
-sudo apt install nvidia-driver-470
-```
 
 - Check GPU in use by checking the string in square bracket: 
 ```sh
@@ -50,7 +59,7 @@ lspci -nnk -d <string_above>
 sudo reboot
 ```
 
-3. Download anaconda (use $ conda -V check whether have one)
+3. 
 ```sh
 cd <file_want_to_download>
 ```
@@ -70,7 +79,7 @@ bash <file_name_of_anaconda_download>
 conda init
 ```
 
-4. Download CUDA
+4. 
     - Find correct version in website: 
        https://developer.nvidia.com/cuda-toolkit-archive, this case: CUDA 11.1.0
     - Use runfile(local) method
@@ -79,7 +88,7 @@ conda init
     - Install CUDA
     $ sudo sh cuda_11.1.0_455.23.05_linux.run 
       Don’t choose [ ]Driver, since already got one
-5. Set environment variable
+5. 
     - Open ~/.bashrc file:
     $ sudo nano ~/.bashrc
     - Copy these to the end of file:
@@ -91,7 +100,7 @@ conda init
     - These steps not sure: 
        https://blog.csdn.net/chen20170325/article/details/130294270
 
-6. Setup Pytorch and others
+6. 
 PyTorch with CUDA support are required. Our code is tested on python 3.8, torch 1.10.0, CUDA 11.1, and RTX 3090.
 
 We recommend installing the required packages in the following order to avoid potential version conflicts:
