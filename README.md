@@ -98,23 +98,24 @@
    These steps not sure: https://blog.csdn.net/chen20170325/article/details/130294270
 
 6. Setup Pytorch and others:
-PyTorch with CUDA support are required. Our code is tested on python 3.8, torch 1.10.0, CUDA 11.1, and RTX 3090.
+   PyTorch with CUDA support are required. Our code is tested on python 3.8, torch 1.10.0, CUDA 11.1, and RTX 3090.
 
-We recommend installing the required packages in the following order to avoid potential version conflicts:
-```sh
-pip install torch==1.10.0+cu111 torchvision==0.11.0+cu111 torchaudio==0.10.0 -f https://download.pytorch.org/whl/torch_stable.html
-pip install absl-py tensorboard opencv-python setuptools==59.5.0 trimesh kornia fvcore iopath matplotlib wandb scikit-learn scipy
-pip install --no-index --no-cache-dir pytorch3d -f https://dl.fbaipublicfiles.com/pytorch3d/packaging/wheels/py38_cu111_pyt1100/download.html
-```
-If the third step fails to find a valid version of pytorch3d, an alternative approach is to download the .tar.bz2 package from [the Anaconda website](https://anaconda.org/pytorch3d/pytorch3d/files?sort=length&sort_order=desc&page=1) (version: pytorch3d-0.6.1-py38_cu111_pyt1100.tar.bz2), and install the package with:
-```sh
-conda install /path/to/xxx.tar.bz2
-```
-Then, git clone our repository, and build the required [SoftRas](https://github.com/ShichenLiu/SoftRas) package located in ```PROJECT_ROOT/third-party/softras```:
-```sh
-cd third-party/softras
-python setup.py install
-```
+   We recommend installing the required packages in the following order to avoid potential version conflicts:
+   ```sh
+   pip install torch==1.10.0+cu111 torchvision==0.11.0+cu111 torchaudio==0.10.0 -f https://download.pytorch.org/whl/torch_stable.html
+   pip install absl-py tensorboard opencv-python setuptools==59.5.0 trimesh kornia fvcore iopath matplotlib wandb scikit-learn scipy
+   pip install --no-index --no-cache-dir pytorch3d -f https://dl.fbaipublicfiles.com/pytorch3d/packaging/wheels/py38_cu111_pyt1100/download.html
+   ```
+
+   If the third step fails to find a valid version of pytorch3d, an alternative approach is to download the .tar.bz2 package from [the Anaconda website](https://anaconda.org/pytorch3d/pytorch3d/files?sort=length&sort_order=desc&page=1) (version: pytorch3d-0.6.1-py38_cu111_pyt1100.tar.bz2), and install the package with:
+   ```sh
+   conda install /path/to/xxx.tar.bz2
+   ```
+   Then, git clone our repository, and build the required [SoftRas](https://github.com/ShichenLiu/SoftRas) package located in ```PROJECT_ROOT/third-party/softras```:
+   ```sh
+   cd third-party/softras
+   python setup.py install
+   ```
 
 ## Data Preparation
 
