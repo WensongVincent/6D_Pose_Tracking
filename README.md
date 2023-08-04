@@ -11,7 +11,7 @@
 
 ## Environment Setup
 
-1. Check Nvidia Driver:
+1. Check Nvidia Driver
    ```sh
    nvidia-smi
    ```
@@ -22,7 +22,8 @@
    sudo apt-get update
    ```
    
-2. Check available drivers:
+2. Download Nvidia Driver
+   Check available drivers:
    ```sh
    apt-cache search nvidia-driver-
    ```
@@ -47,7 +48,7 @@
    sudo reboot
    ```
    
-3. Download Nvidia Driver:
+3. Download anaconda (use $ conda -V check whether have one):
    ```sh
    cd <file_want_to_download>
    ```
@@ -67,48 +68,38 @@
    conda init
    ```
    
-4. Download anaconda (use $ conda -V check whether have one):
+4. Download CUDA:
+   Find correct version in website: https://developer.nvidia.com/cuda-toolkit-archive, this case: CUDA 11.1.0
+
+   Use runfile(local) method, Download .run file first:
+   ```sh
+   wget https://developer.download.nvidia.com/compute/cuda/11.1.0/local_installers/cuda_11.1.0_455.23.05_linux.run
+   ```
+
+   Install CUDA, don’t choose [ ]Driver, since already got one:
+   ```sh
+   sudo sh cuda_11.1.0_455.23.05_linux.run
+   ```
    
-5. Download CUDA:
-   
-6. Set environment variable:
-   
-7. Setup Pytorch and others:
+5. Set environment variable:
+   Open ~/.bashrc file:
+   ```sh
+   sudo nano ~/.bashrc
+   ```
+   Copy these to the end of file:
+   ```sh
+   export CUDA_HOME=/usr/local/cuda
+   export PATH=$PATH:$CUDA_HOME/bin
+   export LD_LIBRARY_PATH=/usr/local/cuda11.6/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+   ```
 
+   Save:
+   ```sh
+   source ~/.bashrc
+   ```
+   These steps not sure: https://blog.csdn.net/chen20170325/article/details/130294270
 
-
-
-
-
-
-
-
-
-3. 
-
-
-4. 
-    - Find correct version in website: 
-       https://developer.nvidia.com/cuda-toolkit-archive, this case: CUDA 11.1.0
-    - Use runfile(local) method
-    - Download .run file
-    $ wget https://developer.download.nvidia.com/compute/cuda/11.1.0/local_installers/cuda_11.1.0_455.23.05_linux.run
-    - Install CUDA
-    $ sudo sh cuda_11.1.0_455.23.05_linux.run 
-      Don’t choose [ ]Driver, since already got one
-5. 
-    - Open ~/.bashrc file:
-    $ sudo nano ~/.bashrc
-    - Copy these to the end of file:
-    export CUDA_HOME=/usr/local/cuda
-    export PATH=$PATH:$CUDA_HOME/bin
-    export LD_LIBRARY_PATH=/usr/local/cuda11.6/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
-    - Save:
-    $ source ~/.bashrc
-    - These steps not sure: 
-       https://blog.csdn.net/chen20170325/article/details/130294270
-
-6. 
+6. Setup Pytorch and others:
 PyTorch with CUDA support are required. Our code is tested on python 3.8, torch 1.10.0, CUDA 11.1, and RTX 3090.
 
 We recommend installing the required packages in the following order to avoid potential version conflicts:
