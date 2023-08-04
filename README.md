@@ -1,6 +1,4 @@
-# Self-Supervised Geometric Correspondence for Category-Level 6D Object Pose Estimation in the Wild
-
-![method.jpg](assets/method.jpg)
+# Self-Supervised Category-Level 6D Object Pose Tracking using Learned Mesh
 
 ## Progress
 
