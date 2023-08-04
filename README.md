@@ -2,7 +2,7 @@
 
 ## Progress
 
-- [ ] Training code
+- [x] Training code
 - [ ] Evaluation code
 - [ ] Pretrained models
 - [ ] More datasets
